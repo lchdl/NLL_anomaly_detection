@@ -64,6 +64,8 @@ In this example we used two datasets, [HCP](https://www.humanconnectome.org/stud
 
 <img src="https://github.com/lchdl/NLL_anomaly_detection/tree/main/images/HCP_ATLAS_examples.png" width="300">
 
+![Alt text](https://github.com/lchdl/NLL_anomaly_detection/tree/main/images/HCP_ATLAS_examples.png?raw=true "Title")
+
 ## 5. Quick start
 
 I packed the code 
