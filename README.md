@@ -1,17 +1,17 @@
 # NLL_anomaly_detection
 A simple anomaly detection algorithm for medical imaging based on multi-atlas image registration and negative log likelihood.
 
-## Paper
+## 1. Paper
 MICCAI-2021: Improved Brain Lesion Segmentation with Anatomical Priors from Healthy Subjects.
 
-## Prerequisites
+## 2. Prerequisites
 You need to install the following softwares for running the code.
 
 **ANTs-2.3** (older versions should also work) and **FSL-6.0**
 
 If you already have **ANTs** and **FSL** installed before, just skip the following steps.
 
-> **1. ANTs (Advanced Normalization Tools)**
+> **2.1. ANTs (Advanced Normalization Tools)**
 >
 > **Link**: https://github.com/ANTsX/ANTs
 >
@@ -32,7 +32,7 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ```
 > We need to use `antsRegistration` to reigster medical images. `N4BiasFieldCorrection` is used to correct image intensity bias.
 
-> **2. FSL (FMRIB Software Library)**
+> **2.2. FSL (FMRIB Software Library)**
 >
 > **Link**: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
 >
@@ -44,7 +44,7 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ```
 > in your console. If no error occurs then everything is OK! :). We use `bet` (brain extraction tool) to calculate brain mask for each image.
 
-## Install this script
+## 3. Install this script
 
 After the installation of ANTs and FSL, you need to do the following steps to install this script:
 
@@ -58,13 +58,12 @@ pip install -e .
 
 
 
-## Prepare your data
+## 4. Prepare your data
 
-### Download data
 In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) (Human Connectome Project) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) (Anatomical Tracings of Lesions After Stroke). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients. Here are the examples of the downloaded images, you need to check if the appearances of the images are correct:
 
+## 5. Quick start
 
-### Organize your data to run the code
 I packed the code 
 
 Randomly pick 10 normal-appearing images from HCP dataset, and then randomly pick one patient image from ATLAS dataset.
@@ -72,8 +71,6 @@ Randomly pick 10 normal-appearing images from HCP dataset, and then randomly pic
 You need to tell the script where those downloaded images are stored.
 
 You can
-
-## Quick start
 
 The calculated NLL anomaly score map can be found in ...
 Implementation principle and details is given in the following part
