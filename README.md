@@ -62,16 +62,12 @@ pip install -e .
 
 In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) (Human Connectome Project) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) (Anatomical Tracings of Lesions After Stroke). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients. Here are the examples of the downloaded images, you need to check if the appearances of the downloaded images are similar with the following examples:
 
-<div style="text-align:center"><img align="center" src="" width="300" /></div>
-
 <p align="center">
   <img 
        src="https://github.com/lchdl/NLL_anomaly_detection/blob/main/images/HCP_ATLAS_examples.png"
-       width="500"
+       width="350"
   />
 </p>
-
-![image_example](https://github.com/lchdl/NLL_anomaly_detection/blob/main/images/HCP_ATLAS_examples.png?raw=true "Image examples from HCP and ATLAS dataset.")
 
 ## 5. Quick start
 
