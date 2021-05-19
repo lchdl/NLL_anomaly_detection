@@ -43,7 +43,7 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 ## Prepare your data
 
 ### Download data
-In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients.
+In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) (Human Connectome Project) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) (Anatomical Tracings of Lesions After Stroke). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients.
 
 ### Pre-processing
 Here I provided the details about pre-processing steps for HCP and ATLAS dataset.
