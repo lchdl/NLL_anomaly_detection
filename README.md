@@ -44,6 +44,10 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ```
 > in your console. If no error occurs then everything is OK! :). We use `bet` (brain extraction tool) to calculate brain mask for each image.
 
+## Install this script
+
+After the installation of ANTs and FSL, you need to create a new Python3 venv ([link](https://docs.python.org/3/library/venv.html))
+
 ## Prepare your data
 
 ### Download data
