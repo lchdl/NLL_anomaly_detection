@@ -53,6 +53,7 @@ After the installation of ANTs and FSL, you need to do the following steps to in
 2. Activate the newly created virtual environment, download and unzip the codes, then `cd` into the directory where `setup.py` is located, and type:
 
 ```
+pip install -U setuptools
 pip install -e .
 ```
 

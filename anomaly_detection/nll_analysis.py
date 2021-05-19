@@ -8,7 +8,7 @@ def main():
     parser.add_argument('-s', '--source-images', nargs='+',type=str,required=True)
     parser.add_argument('-t', '--target-image',type=str,required=True)
     parser.add_argument('-o', '--output-dir',required=True, type=str)
-    parser.add_argument('--do-n4-correction', type=bool, default=True)
+    parser.add_argument('--do-n4-correction', choices = ['source', 'target', 'none', 'both'],type=str, default='source')
     
     args = parser.parse_args()
 
