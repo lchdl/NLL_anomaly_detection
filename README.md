@@ -40,6 +40,15 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ```
 > in your console. If no error occurs then everything is OK! :). We use `bet` (brain extraction tool) to calculate brain mask for each image.
 
+## Prepare your data
+
+### Download data
+In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients.
+
+### Pre-processing
+Here I provided the details about pre-processing steps for HCP and ATLAS dataset.
+
+
 ## Quick start
 
 
