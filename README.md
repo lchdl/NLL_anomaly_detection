@@ -7,8 +7,9 @@ MICCAI-2021: Improved Brain Lesion Segmentation with Anatomical Priors from Heal
 ## Prerequisites
 You need to install the following softwares for running the code.
 
-**ANTs-2.3** or newer version (older versions should also work)
-FSL-
+**ANTs-2.3** (older versions should also work);
+
+**FSL-6.0**
 
 If you already have ANTs and FSL installed before, just skip the following steps.
 
@@ -17,10 +18,24 @@ If you already have ANTs and FSL installed before, just skip the following steps
 > Link to ANTs: https://github.com/ANTsX/ANTs
 >
 > How to install: compile from [source code](https://github.com/ANTsX/ANTs) (recommended) or pre-built [binaries](https://github.com/ANTsX/ANTs/releases)
+> 
+> Verify your install: to see whether ANTs is installed correctly on your system, after the installation you need to type in
+> ```
+> antsRegistration --version
+> ```
+> in your console. It should produce output such as:
+> 
+> '''
+> ANTs Version: 3.0.0.0.dev13-ga16cc
+> 
+> Compiled: Jan 22 2019 00:23:29
+> '''
 
-
-
-
+> **2. FSL (FMRIB Software Library)**
+>
+> Link to FSL: 
+>
+> How to install: 
 
 ## Quick start
 
