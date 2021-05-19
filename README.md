@@ -7,9 +7,10 @@ MICCAI-2021: Improved Brain Lesion Segmentation with Anatomical Priors from Heal
 ## Prerequisites
 You need to install the following softwares for running the code.
 
+
 **1. ANTs (Advanced Normalization Tools)**
 
-> link to ANTs: https://github.com/ANTsX/ANTs
+> Link to ANTs: https://github.com/ANTsX/ANTs
 >
-> compile ANTs from source code: 
+> How to install: compile from [source code](https://github.com/ANTsX/ANTs) (recommended) or pre-built [binaries](https://github.com/ANTsX/ANTs/releases)
 
