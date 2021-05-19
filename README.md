@@ -26,6 +26,7 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ANTs Version: 3.0.0.0.dev13-ga16cc
 > Compiled: Jan 22 2019 00:23:29
 > ```
+> We need to use `antsRegistration` to reigster two medical images.
 
 > **2. FSL (FMRIB Software Library)**
 >
@@ -37,7 +38,7 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ```
 > bet -h
 > ```
-> in your console. If no error occurs then everything is OK :)
+> in your console. If no error occurs then everything is OK! :). We use `bet` (brain extraction tool) to calculate brain mask for each image.
 
 ## Quick start
 
