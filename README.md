@@ -44,6 +44,6 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 
 
 
-## Details of each step
+## Implementation details
 
 
