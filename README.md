@@ -46,7 +46,11 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 
 ## Install this script
 
-After the installation of ANTs and FSL, you need to create a new Python3 venv ([link](https://docs.python.org/3/library/venv.html)). Activate the newly created virtual environment, then `cd` into the directory where `setup.py` is located, and type:
+After the installation of ANTs and FSL, you need to do the following steps to install this script:
+
+1. create a new Python3 venv ([link](https://docs.python.org/3/library/venv.html)). 
+
+2. Activate the newly created virtual environment, download and unzip the codes, then `cd` into the directory where `setup.py` is located, and type:
 
 ```
 pip install -e .
