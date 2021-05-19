@@ -61,18 +61,32 @@ pip install -e .
 ## Prepare your data
 
 ### Download data
-In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) (Human Connectome Project) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) (Anatomical Tracings of Lesions After Stroke). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients.
+In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) (Human Connectome Project) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) (Anatomical Tracings of Lesions After Stroke). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients. Here are the examples of the downloaded images, you need to check if the appearances of the images are correct:
+
+
+### Organize your data to run the code
+I packed the code 
+
+Randomly pick 10 normal-appearing images from HCP dataset, and then randomly pick one patient image from ATLAS dataset.
+
+You need to tell the script where those downloaded images are stored.
+
+You can
+
+## Quick start
+
+The calculated NLL anomaly score map can be found in ...
+Implementation principle and details is given in the following part
+
+Once you understand how the code works, you can modify the NLL anomaly detection interface to your own need :), this is why I only uploaded a minimum working example.
+
+
+## Implementation details
 
 ### Pre-processing
 Here I provided the details about pre-processing steps for HCP and ATLAS dataset.
 
 > **1. N4 bias field correction**
 > 
-
-## Quick start
-
-
-
-## Implementation details
 
 
