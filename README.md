@@ -30,7 +30,12 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ANTs Version: 3.0.0.0.dev13-ga16cc
 > Compiled: Jan 22 2019 00:23:29
 > ```
-> We need to use `antsRegistration` to reigster medical images. `N4BiasFieldCorrection` is used to correct image intensity bias.
+> Then test if `antsApplyTransforms` can work:
+> ```
+> antsApplyTransforms
+> ```
+> if no error shows, then ANTs is successfully installed.
+> We need to use `antsRegistration` to reigster medical images, `antsApplyTransforms` to apply transforms to images, and `N4BiasFieldCorrection` to correct image intensity bias.
 
 **2.2. FSL (FMRIB Software Library)**
 >

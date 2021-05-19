@@ -8,8 +8,8 @@ setup(
     author='Chenghao Liu',
     author_email='3120190681@bit.edu.cn, liuchenghao1652@gmail.com',
     install_requires=[
-        'numpy==1.18.5',
-        'nibabel==3.1.1',
+        'numpy>=1.16',
+        'nibabel>=3.1.1',
         'scikit-image==0.18.1',
         'scipy==1.6.2'
     ],

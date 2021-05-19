@@ -1,5 +1,4 @@
 import numpy as np
-import nibabel as nib
 import scipy.ndimage
 
 def min_max_norm(data):
