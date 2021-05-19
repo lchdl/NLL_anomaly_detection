@@ -13,11 +13,11 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 
 > **1. ANTs (Advanced Normalization Tools)**
 >
-> Link to ANTs: https://github.com/ANTsX/ANTs
+> **Link**: https://github.com/ANTsX/ANTs
 >
-> How to install: compile from [source code](https://github.com/ANTsX/ANTs) (recommended) or pre-built [binaries](https://github.com/ANTsX/ANTs/releases)
+> **How to install**: compile from [source code](https://github.com/ANTsX/ANTs) (recommended) or pre-built [binaries](https://github.com/ANTsX/ANTs/releases)
 > 
-> Verify your install: to see whether ANTs is installed correctly on your system, after the installation you need to type in
+> **Verify your install**: to see whether ANTs is installed correctly on your system, after the installation you need to type in
 > ```
 > antsRegistration --version
 > ```
@@ -30,11 +30,11 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 
 > **2. FSL (FMRIB Software Library)**
 >
-> Link to FSL: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
+> **Link**: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
 >
-> How to install: FSL is installed using the *fsl_installer.py* downloaded from [here](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation). You need to register your personal information to the FSL site before download. After download you need to run the installer script and wait for the installation to finish.
+> **How to install**: FSL is installed using the *fsl_installer.py* downloaded from [here](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation). You need to register your personal information to the FSL site before download. After download you need to run the installer script and wait for the installation to finish.
 >
-> Verify your install: when the installation finished, type in
+> **Verify your install**: when the installation finished, type in
 > ```
 > bet -h
 > ```
