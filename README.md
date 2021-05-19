@@ -11,7 +11,7 @@ You need to install the following softwares for running the code.
 
 If you already have **ANTs** and **FSL** installed before, just skip the following steps.
 
-> **2.1. ANTs (Advanced Normalization Tools)**
+**2.1. ANTs (Advanced Normalization Tools)**
 >
 > **Link**: https://github.com/ANTsX/ANTs
 >
@@ -32,7 +32,7 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ```
 > We need to use `antsRegistration` to reigster medical images. `N4BiasFieldCorrection` is used to correct image intensity bias.
 
-> **2.2. FSL (FMRIB Software Library)**
+**2.2. FSL (FMRIB Software Library)**
 >
 > **Link**: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki
 >
