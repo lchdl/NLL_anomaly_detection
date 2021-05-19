@@ -21,12 +21,16 @@ If you already have **ANTs** and **FSL** installed before, just skip the followi
 > ```
 > antsRegistration --version
 > ```
+> and
+> ```
+> N4BiasFieldCorrection --version
+> ```
 > in your console. It should produce output such as:
 > ```
 > ANTs Version: 3.0.0.0.dev13-ga16cc
 > Compiled: Jan 22 2019 00:23:29
 > ```
-> We need to use `antsRegistration` to reigster medical images.
+> We need to use `antsRegistration` to reigster medical images. `N4BiasFieldCorrection` is used to correct image intensity bias.
 
 > **2. FSL (FMRIB Software Library)**
 >
@@ -48,6 +52,8 @@ In this example we used two datasets, [HCP](https://www.humanconnectome.org/stud
 ### Pre-processing
 Here I provided the details about pre-processing steps for HCP and ATLAS dataset.
 
+> **1. N4 bias field correction**
+> 
 
 ## Quick start
 
