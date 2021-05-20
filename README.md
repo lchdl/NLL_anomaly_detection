@@ -1,5 +1,5 @@
 # NLL_anomaly_detection
-A simple anomaly detection algorithm for medical imaging based on multi-atlas image registration and negative log likelihood.
+A simple anomaly detection algorithm for medical imaging based on multi-atlas image registration and negative log likelihood (NLL).
 
 ## 1. Paper
 MICCAI-2021: Improved Brain Lesion Segmentation with Anatomical Priors from Healthy Subjects.
@@ -79,15 +79,21 @@ Note that the image appearances from HCP may vary in different releases. In this
 
 ## 5. Quick start
 
+Once you installed the scripts, you can use the following command to calculate anomaly scores for a patient image:
+```
+<pre>
+<b>NLL_anomaly_detection</b> \
+--source-images /path/to/source/image1.nii.gz /path/to/source/image2.nii.gz /path/to/source/image3.nii.gz ... /path/to/source/image10.nii.gz \
+--target-image /path/to/target/image.nii.gz \
+--output-dir /path/to/output/dir/
+</pre>
+```
+
 ...
-
-Once you understand how the code works, you can modify the NLL anomaly detection interface to your own need :), this is why I only uploaded a minimum working example.
-
 
 ## 6. Implementation details
 
 ### 6.1 Pre-processing
-Here I provided the details about pre-processing steps for HCP and ATLAS dataset.
 
 **1. N4 bias field correction**
 >...
