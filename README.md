@@ -64,8 +64,6 @@ pip install -U setuptools
 pip install -e .
 ```
 
-
-
 ## 4. Prepare your data
 
 In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) (Human Connectome Project) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) (Anatomical Tracings of Lesions After Stroke). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients. Here is a screenshot of the downloaded images, you need to check if the appearances of the downloaded images are similar with the following example:
@@ -77,30 +75,30 @@ In this example we used two datasets, [HCP](https://www.humanconnectome.org/stud
   />
 </p>
 
-Note that the image appearances from HCP may vary in different releases. In this demo the HCP image release is not bias field corrected (you can see the center brain darker than the outside), which is a more generalized case.
+Note that the image appearances from HCP may vary in different releases. In this demo the HCP image release is not bias field corrected (you can see the center brain darker than the outside), which is a more generalized case. If you use your own dataset instad of HCP, and the images are bias field corrected, you can skip "N4 correction". For more details, please refer to "Sect. 5: Quick start".
 
 ## 5. Quick start
 
-I packed the code 
-
-Randomly pick 10 normal-appearing images from HCP dataset, and then randomly pick one patient image from ATLAS dataset.
-
-You need to tell the script where those downloaded images are stored.
-
-You can
-
-The calculated NLL anomaly score map can be found in ...
-Implementation principle and details is given in the following part
+...
 
 Once you understand how the code works, you can modify the NLL anomaly detection interface to your own need :), this is why I only uploaded a minimum working example.
 
 
-## Implementation details
+## 6. Implementation details
 
-### Pre-processing
+### 6.1 Pre-processing
 Here I provided the details about pre-processing steps for HCP and ATLAS dataset.
 
-> **1. N4 bias field correction**
-> 
+**1. N4 bias field correction**
+>...
+
+**2. Skull-stripping**
+>...
+
+### 6.2 Image registration using ANTs
+
+
+### 6.3 NLL anomaly score calculation
+
 
 

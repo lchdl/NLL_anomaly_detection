@@ -85,7 +85,10 @@ def main():
             run_shell('bet %s %s -m -n' % (source_image,source_image_brain))
         source_brain_masks.append(source_image_brain_mask)
 
-    # do image registration
+    #########################
+    # do image registration #
+    #########################
+    
     print('start image registration ...')
     reg_dir = mkdir(join_path(output_dir,'registered'))
     for source_image, source_brain_mask in zip(source_images_after_n4, source_brain_masks):
