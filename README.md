@@ -79,16 +79,18 @@ Note that the image appearances from HCP may vary in different releases. In this
 
 ## 5. Quick start
 
-Once you installed the scripts, you can use the following command to calculate anomaly scores for a patient image:
+Once you installed the scripts, you can use the following command to calculate anomaly scores for a target image:
 
 <pre>
 <b>NLL_anomaly_detection</b> \
---source-images /path/to/source/image1.nii.gz /path/to/source/image2.nii.gz /path/to/source/image3.nii.gz ... /path/to/source/image10.nii.gz \
---target-image /path/to/target/image.nii.gz \
---output-dir /path/to/output/dir/
+<b>--source-images</b> /path/to/source/image1.nii.gz /path/to/source/image2.nii.gz /path/to/source/image3.nii.gz ... /path/to/source/image10.nii.gz \
+<b>--target-image</b> /path/to/target/image.nii.gz \
+<b>--output-dir</b> /path/to/output/dir/
 </pre>
 
-...
+In the above example, "**--source-images**" tells the script how many reference images there are and their locations, "**--target-image**" specifies the image we want to analyze. All the outputs will be saved to a directory, which is determined by "**--output-dir**" parameter. 
+
+More advanced options are available. ...
 
 ## 6. Implementation details
 
