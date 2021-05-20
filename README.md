@@ -4,6 +4,8 @@ A simple anomaly detection algorithm for medical imaging based on multi-atlas im
 ## 1. Paper
 MICCAI-2021: Improved Brain Lesion Segmentation with Anatomical Priors from Healthy Subjects.
 
+Chenghao Liu, Xiangzhu Zeng, Kongming Liang, Yizhou Yu, Chuyang Ye
+
 ## 2. Prerequisites
 You need to install the following softwares for running the code.
 
@@ -66,7 +68,7 @@ pip install -e .
 
 ## 4. Prepare your data
 
-In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) (Human Connectome Project) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) (Anatomical Tracings of Lesions After Stroke). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients. Here are the examples of the downloaded images, you need to check if the appearances of the downloaded images are similar with the following examples:
+In this example we used two datasets, [HCP](https://www.humanconnectome.org/study/hcp-young-adult/data-releases) (Human Connectome Project) and [ATLAS](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) (Anatomical Tracings of Lesions After Stroke). They are all publicly avaliable. HCP dataset provides healthy MRI T1-weighted scans and ATLAS dataset provides T1-weighted scans of chronic stroke patients. Here is a screenshot of the downloaded images, you need to check if the appearances of the downloaded images are similar with the following example:
 
 <p align="center">
   <img 
@@ -74,6 +76,8 @@ In this example we used two datasets, [HCP](https://www.humanconnectome.org/stud
        width="350"
   />
 </p>
+
+Note that the image appearances from HCP may vary in different releases. In this demo the HCP image release is not bias field corrected (you can see the center brain darker than the outside), which is a more generalized case.
 
 ## 5. Quick start
 
