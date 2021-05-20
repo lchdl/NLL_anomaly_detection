@@ -4,9 +4,10 @@ setup(
     name='NLL_anomaly_detection',
     packages=find_namespace_packages(include=["anomaly_detection", "anomaly_detection.*"]),
     version='0.0.1',
-    description='A simple anomaly detection algorithm for medical imaging based on multi-atlas image registration and negative log likelihood.',
+    description='A simple anomaly detection algorithm for medical imaging '
+        'based on multi-atlas image registration and negative log likelihood.',
     author='Chenghao Liu',
-    author_email='3120190681@bit.edu.cn, liuchenghao1652@gmail.com',
+    author_email='3120190681@bit.edu.cn, chenghao1652@126.com',
     install_requires=[
         'numpy>=1.16',
         'nibabel>=3.1.1',
@@ -18,7 +19,9 @@ setup(
             'NLL_anomaly_detection = anomaly_detection.nll_analysis:main'
         ]
     },
-    keywords=['image segmentation', 'lesion segmentation' , 'unsupervised learning', 
+    keywords=[
+        'image segmentation', 'lesion segmentation' , 'unsupervised learning', 
         'medical image segmentation', 'unsupervised lesion segmentation', 'anomaly detection', 'NLL', 
-        'negative log likelihood']
+        'negative log likelihood'
+    ]
 )
