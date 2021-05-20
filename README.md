@@ -80,14 +80,13 @@ Note that the image appearances from HCP may vary in different releases. In this
 ## 5. Quick start
 
 Once you installed the scripts, you can use the following command to calculate anomaly scores for a patient image:
-```
+
 <pre>
 <b>NLL_anomaly_detection</b> \
 --source-images /path/to/source/image1.nii.gz /path/to/source/image2.nii.gz /path/to/source/image3.nii.gz ... /path/to/source/image10.nii.gz \
 --target-image /path/to/target/image.nii.gz \
 --output-dir /path/to/output/dir/
 </pre>
-```
 
 ...
 
