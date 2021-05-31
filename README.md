@@ -88,9 +88,11 @@ Once you installed the scripts, you can use the following command to calculate a
 <b>--output-dir</b> /path/to/output/dir/
 </pre>
 
-In the above example, "**--source-images**" tells the script how many reference images there are and their locations, "**--target-image**" specifies the image we want to analyze. All the outputs will be saved to a directory, which is determined by "**--output-dir**" parameter. 
+In the above example, "**--source-images**" tells the script how many reference images there are and their locations (at least two images are needed), "**--target-image**" specifies the image we want to analyze. All the outputs will be saved to a directory, which is determined by "**--output-dir**" parameter. 
 
 More advanced options are available. ...
+
+Implementation details will be provided in the next section.
 
 ## 6. Implementation details
 

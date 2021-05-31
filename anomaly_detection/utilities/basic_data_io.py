@@ -36,6 +36,7 @@ def load_pkl(pkl_path):
         content = pickle.load(f)
     return content
 
+
 def load_nifti_simple(path, return_type='float32'):
     if return_type is None:
         return nib.load(path).get_fdata()

@@ -1,5 +1,7 @@
 import numpy as np
 import scipy.ndimage
+from scipy.stats import cumfreq
+
 
 def min_max_norm(data):
     return (data-data.min())/(data.max()-data.min()+0.00001) # normalize to [0,1)
@@ -66,3 +68,21 @@ def group_mean(data_list, normlization='min_max', masks=None):
         all_data.append(data)
     data_std = np.reshape(np.mean(np.vstack(all_data),axis=0),dshape_runtime)
     return data_std
+
+def cutoff(data,percentage):
+    assert percentage > 0.0 and percentage < 1.0, 'invalid percentage setting.'
+    numbins = 32
+    bins = cumfreq(data,numbins=numbins)
+    total_voxels = bins.cumcount[-1]
+    voxel_lo, voxel_hi, voxel_thresh = 0, 0, total_voxels*percentage
+    value_lo, value_hi, value_thresh = bins.lowerlimit, bins.lowerlimit, None
+    for bin_id in range(numbins):
+        voxel_hi = bins.cumcount[bin_id]
+        value_hi += bins.binsize
+        if voxel_lo <= voxel_thresh and voxel_thresh <= voxel_hi:
+            ratio = (voxel_thresh - voxel_lo) / (voxel_hi - voxel_lo)
+            value_thresh = (1-ratio)*value_lo + ratio*value_hi
+            return value_thresh
+        voxel_lo = voxel_hi
+        value_lo = value_hi
+    return None

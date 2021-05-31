@@ -3,8 +3,10 @@ from anomaly_detection.utilities.external_call import run_shell
 from anomaly_detection.utilities.file_operations import abs_path, gfd, rm, join_path, mkdir
 
 def generate_registration_command(source, target, warped, 
-    interpolation_method='Linear', use_histogram_matching=False):
-    
+    interpolation_method='Linear', use_histogram_matching=False,
+    deform_type='elastic'):
+
+    assert deform_type in ['elastic', 'rigid+affine'], 'unknown deformation type.'
     assert interpolation_method in ['Linear', 'NearestNeighbor'], 'unknown interpolation method.'
     assert use_histogram_matching in [True, False], 'invalid parameter setting for "use_histogram_matching".'
     
@@ -31,11 +33,12 @@ def generate_registration_command(source, target, warped,
     command += '--convergence [1000x500x250x0,1e-6,10] '
     command += '--shrink-factors 8x4x2x1 '
     command += '--smoothing-sigmas 3x2x1x0vox '
-    command += '--transform SyN[0.1,3,0] '
-    command += '--metric CC[%s,%s,1,4] ' % (target,source)
-    command += '--convergence [100x70x50x20,1e-6,10] '
-    command += '--shrink-factors 8x4x2x1 '
-    command += '--smoothing-sigmas 3x2x1x0vox '
+    if deform_type == 'elastic':
+        command += '--transform SyN[0.1,3,0] '
+        command += '--metric CC[%s,%s,1,4] ' % (target,source)
+        command += '--convergence [100x70x50x20,1e-6,10] '
+        command += '--shrink-factors 8x4x2x1 '
+        command += '--smoothing-sigmas 3x2x1x0vox '
 
     return command
 
@@ -76,19 +79,36 @@ def sync_nifti_header(source_path, target_path, output_path):
     source_data = nib.load(source_path).get_fdata()
     save_nifti_with_header(source_data, target_header, output_path)
 
+#####################################################################################
+
+def affine_registration_without_mask(source_image,target_image, output_image):
+    try:
+        output_directory = mkdir(gfd(output_image))
+        run_shell(generate_registration_command(source_image, target_image, output_image, interpolation_method='Linear', 
+            use_histogram_matching=False, deform_type='rigid+affine'))
+    except:
+        raise
+    finally:
+        # remove temporary files
+        rm(join_path(output_directory, 'warp_0GenericAffine.mat'))
+
 
 def image_registration(source_image, source_mask, target_image, output_image, output_mask):
-    output_directory = mkdir(gfd(output_image))
-    run_shell(generate_registration_command(source_image, target_image, output_image, interpolation_method='Linear', use_histogram_matching=False))
-    mask_header_sync_output = join_path(output_directory, 'source_mask.nii.gz')
-    sync_nifti_header(source_mask, source_image, mask_header_sync_output) 
-    affine_transform = join_path(output_directory, 'warp_0GenericAffine.mat')
-    elastic_transform = join_path(output_directory, 'warp_1Warp.nii.gz')
-    deform_mask(mask_header_sync_output,output_image,[affine_transform, elastic_transform], output_mask)
-    # remove unused files
-    rm(join_path(output_directory, 'warp_0GenericAffine.mat'))
-    rm(join_path(output_directory, 'warp_1Warp.nii.gz'))
-    rm(join_path(output_directory, 'warp_1InverseWarp.nii.gz'))
-    rm(mask_header_sync_output)
+    try:
+        output_directory = mkdir(gfd(output_image))
+        run_shell(generate_registration_command(source_image, target_image, output_image, interpolation_method='Linear', use_histogram_matching=False))
+        mask_header_sync_output = join_path(output_directory, 'source_mask.nii.gz')
+        sync_nifti_header(source_mask, source_image, mask_header_sync_output) 
+        affine_transform = join_path(output_directory, 'warp_0GenericAffine.mat')
+        elastic_transform = join_path(output_directory, 'warp_1Warp.nii.gz')
+        deform_mask(mask_header_sync_output,output_image,[affine_transform, elastic_transform], output_mask)
+    except:
+        raise
+    finally:
+        # remove temporary files
+        rm(join_path(output_directory, 'warp_0GenericAffine.mat'))
+        rm(join_path(output_directory, 'warp_1Warp.nii.gz'))
+        rm(join_path(output_directory, 'warp_1InverseWarp.nii.gz'))
+        rm(mask_header_sync_output)
 
     

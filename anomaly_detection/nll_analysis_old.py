@@ -2,8 +2,7 @@ from anomaly_detection.utilities.external_call import run_shell
 from anomaly_detection.utilities.custom_print import print_ts as print
 from anomaly_detection.utilities.file_operations import cp, file_exist, gfd, gfn, join_path, mkdir
 from anomaly_detection.utilities.registration_helper import image_registration
-from anomaly_detection.utilities.image_operations import cutoff
-from anomaly_detection.utilities.basic_data_io import load_nifti_simple
+from scipy.stats import cumfreq
 from skimage.exposure import match_histograms
 import argparse
 
@@ -34,16 +33,11 @@ def main():
 
     # OK, now let's do some dirty works :)
 
-    # ####################################
-    # #  Affine register to MNI152 space #
-    # ####################################
+    ####################################
+    #  Affine register to MNI152 space #
+    ####################################
 
-    # MNI_152_template = 
-
-    # print('affine registration ...')
-    # aff_dir = mkdir(join_path(output_dir,'mni152'))
-    # for source_image in source_images:
-    #     affine_registration_without_mask(source_image,)
+    
 
     ############################
     # N4 bias field correction #
@@ -60,7 +54,7 @@ def main():
         for source_image in source_images:
             target_location = join_path(n4_dir, gfn(source_image))
             if file_exist(target_location) == False:
-                run_shell('N4BiasFieldCorrection -c [300x300x300x300] -i %s -o %s' % (source_image, target_location))
+                run_shell('N4BiasFieldCorrection -c [200x200x200x200] -i %s -o %s' % (source_image, target_location))
             source_images_after_n4.append(target_location)
     else:
         print('no need to do N4 correction for source images.')
@@ -101,8 +95,6 @@ def main():
     # do image registration #
     #########################
 
-    source_images_after_reg = []
-
     print('start image registration ...')
     reg_dir = mkdir(join_path(output_dir,'registered'))
     for source_image, source_brain_mask in zip(source_images_after_n4, source_brain_masks):
@@ -111,25 +103,14 @@ def main():
         output_image = join_path(reg_dir, '%s_to_%s.nii.gz' % (source_case, target_case))
         output_mask = join_path(reg_dir, '%s_to_%s_mask.nii.gz' % (source_case, target_case))
         if file_exist(output_image) and file_exist(output_mask):
-            pass
+            continue
         else:
             image_registration(source_image, source_brain_mask, target_image_after_n4, output_image, output_mask)
-        source_images_after_reg.append(output_image)
 
     ######################################
     # generic image intensity adaptation #
     ######################################
     
-    print('cut off outlier intensities ...')
-    # cutoff outlier intensities
-    for source_image in source_images_after_reg:
-        data = load_nifti_simple(source_image)
-        thresh_hi = cutoff(data,0.99)
-        print('Intensity range of "%s" is between [%.2f, %.2f].' % (source_image,data.min(),data.max()))
-        print('Cutoff threshold = %.2f.' % thresh_hi)
-        
-
-
 
     # # check if source images need to do histogram matching
     # hist_match_dir = mkdir(join_path(output_dir,'histogram_matched'))
