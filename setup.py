@@ -3,7 +3,7 @@ from setuptools import setup, find_namespace_packages
 setup(
     name='NLL_anomaly_detection',
     packages=find_namespace_packages(include=["anomaly_detection", "anomaly_detection.*"]),
-    version='0.0.1',
+    version='0.0.2',
     description='A simple anomaly detection algorithm for medical imaging '
         'based on multi-atlas image registration and negative log likelihood.',
     author='Chenghao Liu',

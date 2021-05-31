@@ -36,12 +36,27 @@ def load_pkl(pkl_path):
         content = pickle.load(f)
     return content
 
-
 def load_nifti_simple(path, return_type='float32'):
     if return_type is None:
         return nib.load(path).get_fdata()
     else:
         return nib.load(path).get_fdata().astype(return_type)
 
-def save_nifti_simple(data,path): # save NIFTI without keeping the original header info
+def save_nifti_simple(data,path): # save NIFTI using the default header
 	nib.save(nib.Nifti1Image(data.astype('float32'),affine=np.eye(4)),path)
+
+def get_nifti_header(nii_path):
+    return nib.load(nii_path).header.copy()
+
+def get_nifti_data(nii_path, return_type='float32'):
+    return nib.load(nii_path).get_fdata().astype(return_type)
+
+def save_nifti_with_header(data, header, path):
+    nib.save(nib.nifti1.Nifti1Image(data.astype('float32'), None, header=header),path)
+
+# synchronize NIFTI file header
+def sync_nifti_header(source_path, target_path, output_path):
+    target_header = nib.load(target_path).header.copy()
+    source_data = nib.load(source_path).get_fdata()
+    save_nifti_with_header(source_data, target_header, output_path)
+
