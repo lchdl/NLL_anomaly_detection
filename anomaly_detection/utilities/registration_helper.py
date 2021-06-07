@@ -71,14 +71,6 @@ def deform_mask(mask,reference,deforms,output):
 
     rm(mask_affine)
 
-def save_nifti_with_header(data, header, path):
-    nib.save(nib.nifti1.Nifti1Image(data.astype('float32'), None, header=header),path)
-
-def sync_nifti_header(source_path, target_path, output_path):
-    target_header = nib.load(target_path).header.copy()
-    source_data = nib.load(source_path).get_fdata()
-    save_nifti_with_header(source_data, target_header, output_path)
-
 #####################################################################################
 
 def affine_registration_without_mask(source_image,target_image, output_image):
