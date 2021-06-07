@@ -1,6 +1,7 @@
 import nibabel as nib
 from anomaly_detection.utilities.external_call import run_shell
 from anomaly_detection.utilities.file_operations import abs_path, gfd, rm, join_path, mkdir
+from anomaly_detection.utilities.basic_data_io import sync_nifti_header
 
 def generate_registration_command(source, target, warped, 
     interpolation_method='Linear', use_histogram_matching=False,
