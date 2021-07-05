@@ -90,7 +90,7 @@ Once you installed the scripts, you can use the following command to calculate a
 
 In the above example, "**--source-images**" tells the script how many reference images there are and their locations (at least two images are needed), "**--target-image**" specifies the image we want to analyze. All the outputs will be saved to a directory, which is determined by "**--output-dir**" parameter. 
 
-**5.1 Skipping bias field correction**
+**5.1. Skipping bias field correction**
 
 More advanced options are available. For example, if the datasets you used are not affected by intensity bias fields, then you can skip intensity bias field correction. This is achieved by passing an additional "**--do-n4-correction none**" to the command line. The default setting for this parameter is "**--do-n4-correction source**", which means the source dataset (HCP dataset in this example) needs to do intensity bias field correction, while the target dataset (ATLAS dataset in this example) do not need to. The available options are: "**none**", "**both**", "**source**" and "**target**".
 
@@ -98,7 +98,7 @@ Implementation details will be provided in "Sect. 6".
 
 ## 6. Implementation details
 
-### 6.1 Pre-processing
+### 6.1. Pre-processing
 
 **1. N4 bias field correction**
 >...
@@ -106,10 +106,10 @@ Implementation details will be provided in "Sect. 6".
 **2. Skull-stripping**
 >...
 
-### 6.2 Image registration using ANTs
+### 6.2. Image registration using ANTs
 
 
-### 6.3 NLL anomaly score calculation
+### 6.3. NLL anomaly score calculation
 
 
 
